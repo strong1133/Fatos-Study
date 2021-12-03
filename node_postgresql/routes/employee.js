@@ -1,4 +1,3 @@
-const e = require("express");
 const express = require("express");
 const employee = express.Router();
 const source = require("../database/employee_dml");
@@ -8,7 +7,7 @@ const {
 
 //GET
 employee.get("/", (req, res) => {
-  res.send("employee");
+  res.render("index.html");
 });
 
 //GET
