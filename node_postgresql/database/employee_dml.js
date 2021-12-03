@@ -1,4 +1,7 @@
 const e = require("express");
+const {
+  query,
+} = require("../database/employee_db");
 const db = require("../database/employee_db");
 
 const employee_dml = {
@@ -49,6 +52,53 @@ const employee_dml = {
       insert into employee (emp_name, emp_age, emp_phone, emp_email, job_no, dept_no) values ('${name}', ${age}, '${phone}', '${email}', ${job}, ${dept});
     `;
 
+    ExcuteQuery(strQuery, callback);
+  },
+
+  //DELETE EMP
+  delEmp: (query, callback) => {
+    let empno = query.empno;
+
+    if (!empno) {
+      callback(new Error("입력값을 확인하세요"));
+    }
+    let strQuery = `
+    update employee set del_yn = 1 where emp_no=' ${empno} ';
+    `;
+    ExcuteQuery(strQuery, callback);
+  },
+
+  //UPDATE EMP
+  setEmp: (query, body, callback) => {
+    let empno = query.empno;
+    if (!empno) {
+      callback(new Error("입력값을 확인하세요"));
+    }
+
+    let name = body.name
+      ? `,emp_name='${body.name}'`
+      : "";
+    let age = body.age
+      ? `,emp_age='${body.age}'`
+      : "";
+    let phone = body.phone
+      ? `,emp_phone='${body.phone}'`
+      : "";
+    let email = body.email
+      ? `,emp_email='${body.email}'`
+      : "";
+    let job = body.job
+      ? `,job_no='${body.job}'`
+      : "";
+    let dept = body.dept
+      ? `,dept_no='${body.dept}'`
+      : "";
+    let condition =
+      name + age + phone + email + job + dept;
+    let strQuery = `
+      update employee set del_yn = 0 ${condition} where emp_no='${empno}';
+    `;
+    console.log(strQuery);
     ExcuteQuery(strQuery, callback);
   },
 };
