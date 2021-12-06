@@ -17,10 +17,13 @@
   <script>
     $(document).ready(function () {
       $(".btn").on("click", function () {
-        for (let i = 0; i < 10000000; i++) {
+        let cnt = 0;
+        for (let i = 0; i < 5; i++) {
           goTran();
+          cnt += 1;
         }
-        console.log("done");
+
+        console.log("done, 요청 횟수 : ", cnt);
       });
     });
 
