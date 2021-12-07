@@ -8,8 +8,8 @@ const pgp = require("pg-promise")({
 // );
 
 // PGBouncer
-const db = pgp(
-  "postgres://strong1133:1234@localhost:6432/db1"
-);
+// const db = pgp(
+//   "postgres://strong1133:1234@localhost:6432/db1"
+// );
 
 module.exports = db;

@@ -116,3 +116,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+pgbouncer_beta/config/pgbouncer.ini
+pgbouncer_beta/database/employee_db.js
