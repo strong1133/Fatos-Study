@@ -32,7 +32,8 @@ const employee_dml = {
         on view1.emp_no = e.emp_no 
         where 
         del_yn=0
-        ${name}`;
+        ${name}
+        order by e.emp_no desc`;
     ExcuteQuery(strQuery, callback);
   },
 
