@@ -118,3 +118,4 @@ dist
 .pnp.*
 pgbouncer_beta/config/pgbouncer.ini
 pgbouncer_beta/database/employee_db.js
+pgbouncer_beta/config/userInfo.txt
