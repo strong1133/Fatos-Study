@@ -117,5 +117,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 pgbouncer_beta/config/pgbouncer.ini
-./database/employee_db.js
-/Fatos-Study/pgbouncer_beta/database/employee_db.js
+pgbouncer_beta/database/employee_db.js
