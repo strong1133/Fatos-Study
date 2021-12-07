@@ -118,3 +118,4 @@ dist
 .pnp.*
 pgbouncer_beta/config/pgbouncer.ini
 pgbouncer_beta/database/employee_db.js
+/Fatos-Study/pgbouncer_beta/database/employee_db.js
